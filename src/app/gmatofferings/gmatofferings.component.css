@@ -1,0 +1,88 @@
+/* Default styles */
+h2 {
+    text-align: center;
+    color: rgb(164, 18, 18);
+  }
+  
+  .card {
+    width: 100%;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+  
+  .card-body {
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  ul {
+    padding-left: 20px; /* Adjust padding as needed */
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 576px) {
+    /* Adjustments for small devices (tablets, etc.) */
+    .card {
+      max-width: calc(50% - 20px); /* Adjust margin as needed */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* Adjustments for medium devices (tablets, landscape phones, etc.) */
+    .card {
+      max-width: calc(33.33% - 20px); /* Adjust margin as needed */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Adjustments for large devices (desktops, etc.) */
+    .card {
+      max-width: calc(25% - 20px); /* Adjust margin as needed */
+    }
+  }
+  
+  @media (max-width: 575px) {
+    /* Adjustments for extra small devices (phones, etc.) */
+    .card {
+      max-width: calc(100% - 20px); /* Adjust margin as needed */
+    }
+  }
+  
+  /* Additional responsive adjustments can be added as needed */
+  
+  /* Responsive styles for the first div */
+@media (max-width: 767.98px) {
+    .col-md-4 {
+      max-width: 100%;
+    }
+  
+    .col-md-8 {
+      max-width: 100%;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .row.g-0 {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  
+    .col-md-4 {
+      max-width: 33.33%;
+    }
+  
+    .col-md-8 {
+      max-width: 66.67%;
+    }
+  
+    .card {
+      max-width: calc(100% - 15px); /* Adjust margin as needed */
+      margin: 0 auto; /* Center the card */
+    }
+  }
+  
+  /* Additional responsive adjustments can be added as needed */
+  

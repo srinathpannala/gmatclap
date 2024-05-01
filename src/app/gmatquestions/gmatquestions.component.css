@@ -1,0 +1,108 @@
+/* Default styles for all screens */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive styles using media queries */
+  @media only screen and (max-width: 1200px) {
+    .container {
+      padding: 15px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    /* Additional responsive styles for medium-sized screens */
+  }
+  
+  @media only screen and (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  
+    .container {
+      padding: 5px;
+    }
+  
+    /* Additional responsive styles for smaller screens */
+  }
+  
+  /* Add more media queries and styles as needed for different breakpoints */
+  
+
+
+  /* Default styles for all screens */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Responsive styles using media queries */
+  @media only screen and (max-width: 768px) {
+    th, td {
+      font-size: 14px;
+    }
+  
+    /* Adjust other styles for smaller screens */
+  }
+  
+  @media only screen and (max-width: 480px) {
+    th, td {
+      font-size: 12px;
+    }
+  
+    /* Additional responsive styles for even smaller screens */
+  }
+  
+  /* Default styles for all screens */
+.my-div {
+  width: 100%;
+  max-width: 800px; /* You can adjust the maximum width based on your design */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+
+/* Responsive styles using media queries */
+@media only screen and (max-width: 768px) {
+  .my-div {
+    padding: 15px;
+  }
+
+  /* Additional responsive styles for medium-sized screens */
+}
+
+@media only screen and (max-width: 480px) {
+  .my-div {
+    padding: 10px;
+  }
+
+  /* Additional responsive styles for smaller screens */
+}

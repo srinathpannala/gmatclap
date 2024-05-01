@@ -1,0 +1,81 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the form horizontally and vertically */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+}
+
+/* Style the form */
+.enquiry-form {
+  width: 90%; /* Adjust width as needed */
+  max-width: 400px; /* Set maximum width */
+  padding: 20px;
+  margin: auto; /* Center the form horizontally */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels */
+.enquiry-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style form inputs */
+.enquiry-form input,
+.enquiry-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style submit button */
+.enquiry-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(164, 18, 18);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.enquiry-form button:hover {
+  background-color: rgb(164, 18, 18);
+}
+
+/* Focus effect for input fields */
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+  outline: none;
+  border-color: rgb(164, 18, 18);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Error message style */
+.error-message {
+  color: rgb(164, 18, 18);
+  font-size: 0.8rem; /* Adjust font size */
+  margin-top: 5px; /* Add spacing */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  .enquiry-form {
+    width: 90%;
+    max-width: none;
+  }
+}

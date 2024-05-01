@@ -1,0 +1,62 @@
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Table Styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: rgb(164, 18, 18);
+    color: white;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: black;
+    color: white;
+  }
+
+  /* Grid Styles */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* Adjust for negative margins */
+  }
+
+  .col {
+    flex: 0 0 100%; /* Full width by default */
+    max-width: 100%;
+    padding: 0 15px; /* Adjust for gutters */
+  }
+
+  /* Responsive Grid for Larger Screens */
+  @media screen and (min-width: 768px) {
+    .col {
+      flex: 0 0 50%; /* Two columns on larger screens */
+      max-width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .col {
+      flex: 0 0 calc(33.333% - 30px); /* Three columns on even larger screens */
+      max-width: calc(33.333% - 30px);
+    }
+  }

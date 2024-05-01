@@ -1,0 +1,142 @@
+<!-- student-register.component.html -->
+
+<h2 style="text-align: center;">Student Registration</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mt-5">
+      <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)" class="login-form" novalidate>
+
+        <div class="form-group mb-3">
+          <label for="login_id">Registration ID:</label>
+          <input type="text" class="form-control" id="login_id" name="studentId" [value]="nextStudentId" disabled>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="studentName" ngModel required #studentName="ngModel">
+          <div *ngIf="studentName.errors?.['required'] && studentName.touched">
+            <p>Please enter a valid Name</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="gender">Gender:</label>
+          <select class="form-control" id="gender" name="gender" ngModel required #gender="ngModel">
+            <option value="" disabled>Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <div *ngIf="gender.errors?.['required'] && gender.touched">
+            <p>Please select a Gender</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" ngModel required #email="ngModel"
+            (blur)="checkEmail(email.value)">
+          <div *ngIf="email.errors?.['required'] && email.touched">
+            <p>Please enter a valid Email</p>
+          </div>
+          <div *ngIf="emailExists && !email.errors?.['required']">
+            <p>Email is already registered. Please choose another.</p>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" ngModel required minlength="8" maxlength="16" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$" #password="ngModel">
+        </div>
+        <div *ngIf="password.errors?.['minlength'] && password.touched">
+          <p>Please enter at least 8 characters for the password</p>
+        </div>
+        <div *ngIf="password.errors?.['required'] && password.touched">
+          <p>Please enter a valid password</p>
+        </div>
+        <div *ngIf="password.errors?.['pattern'] && password.touched">
+          <p>Password must contain at least one special character, one capital alphabet, and some characters</p>
+        </div>
+        
+
+        <div class="form-group mb-3">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ngModel required #confirmPassword="ngModel">
+          <div *ngIf="confirmPassword.errors?.['required'] && confirmPassword.touched">
+            <p>Please confirm your password</p>
+          </div>
+          <div *ngIf="password.value !== confirmPassword.value && confirmPassword.touched">
+            <p>Passwords do not match</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" class="form-control" id="dob" name="dob" ngModel required #dob="ngModel">
+          <div *ngIf="dob.errors?.['required'] && dob.touched">
+            <p>Please enter a valid Date of Birth</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="phone">Phone:</label>
+          <input type="tel" class="form-control" id="phone" name="phone" ngModel required #phone="ngModel" minlength="10" maxlength="10" pattern="^[0-9]+$">
+          <div *ngIf="phone.errors?.['required'] && phone.touched">
+            <p>Please enter a valid Phone number</p>
+          </div>
+          <div *ngIf="phone.errors?.['minlength']">
+            <p>Phone number must be a 10-digit </p>
+          </div>
+          <div *ngIf=" phone.errors?.['pattern']">
+            <p>Phone number must be a number</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="address">Address:</label>
+          <textarea class="form-control" id="address" name="address" ngModel required #address="ngModel"></textarea>
+          <div *ngIf="address.errors?.['required'] && address.touched">
+            <p>Please enter a valid Address</p>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Select Country</label>
+          <select class="form-control" name="country" (change)="onChangeCountry($event)" ngModel #country="ngModel">
+            <option *ngFor="let country of countryInfo; let i = index" [value]="i">{{ country.CountryName }}</option>
+          </select>
+          <div *ngIf="country.errors?.['required'] && country.touched">
+            <p>Please select a Country</p>
+          </div>
+        </div>
+
+        <div class="form-row mb-3">
+          <div class="form-group col-md-6">
+            <label>Select State</label>
+            <select class="form-control" name="state" (change)="onChangeState($event)" ngModel #state="ngModel">
+              <option *ngFor="let state of stateInfo; let j = index" [value]="j">{{ state.StateName }}</option>
+            </select>
+            <div *ngIf="state.errors?.['required'] && state.touched">
+              <p>Please select a State</p>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6 mb-3">
+            <label>Select City</label>
+            <select class="form-control" name="city" ngModel #city="ngModel">
+              <option *ngFor="let city of cityInfo; let k = index" [value]="k">{{ city }}</option>
+            </select>
+            <div *ngIf="city.errors?.['required'] && city.touched">
+              <p>Please select a City</p>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="emailExists || registrationForm.invalid || password.value !== confirmPassword.value" class="btn btn-primary">Register</button>
+        &nbsp;
+        <p class="p1">Already Registered? <a routerLink="/studentLogin">Login</a></p>
+
+      </form>
+    </div>
+  </div>
+</div>
+

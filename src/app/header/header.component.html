@@ -1,0 +1,148 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+>
+  <a class="navbar-brand" routerLink="/">
+    <img src="assets/images/logoo.png" alt="GMATclap" style="width: 100px" />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/"
+          style="font-size: 18px; font-weight: bold"
+          >HOME</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/about"
+          style="font-size: 18px; font-weight: bold"
+          >ABOUT US</a
+        >
+      </li>
+
+      <li class="nav-item dropdown" #gmatDropdown>
+        <a
+          class="nav-link dropdown"
+          id="navbarDropdown"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          (mouseenter)="showDropdown(gmatDropdownMenu)"
+          (mouseleave)="hideDropdown(gmatDropdownMenu)"
+          style="font-size: 18px; font-weight: bold"
+          (click)="navigateToGmat()"
+        >
+          GMAT
+        </a>
+        <div
+          class="dropdown-menu"
+          #gmatDropdownMenu
+          (mouseenter)="showDropdown(gmatDropdownMenu)"
+          (mouseleave)="hideDropdown(gmatDropdownMenu)"
+        >
+          <a
+            class="dropdown-item"
+            routerLink="/gmatofferings"
+            style="display: flex; justify-content: center"
+            >GMAT OFFERINGS</a
+          >
+          <a
+            class="dropdown-item"
+            routerLink="/gmatstructure"
+            style="display: flex; justify-content: center"
+            >GMAT STRUCTURE</a
+          >
+          <a
+            class="dropdown-item"
+            routerLink="/pedagogy"
+            style="display: flex; justify-content: center"
+            >GMAT PEDAGOGY</a
+          >
+          <a
+            class="dropdown-item"
+            routerLink="/gmatquestions"
+            style="display: flex; justify-content: center"
+            >GMAT QUESTIONS</a
+          >
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/blog"
+          style="font-size: 18px; font-weight: bold"
+          >BLOG</a
+        >
+      </li>
+
+      
+
+      <li class="nav-item dropdown" #admissionDropdown>
+        <a
+          class="nav-link dropdown"
+          id="navbarDropdown"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          (mouseenter)="showDropdown(admissionDropdownMenu)"
+          (mouseleave)="hideDropdown(admissionDropdownMenu)"
+          style="font-size: 18px; font-weight: bold"
+          (click)="navigateToAdmission()"
+        >
+          ADMISSION CONSULTING
+        </a>
+        <div
+          class="dropdown-menu"
+          #admissionDropdownMenu
+          (mouseenter)="showDropdown(admissionDropdownMenu)"
+          (mouseleave)="hideDropdown(admissionDropdownMenu)"
+        >
+          <a
+            class="dropdown-item"
+            routerLink="/admission"
+            style="display: flex; justify-content: center"
+            >ADMISSION CONSULTING</a
+          >
+          <a
+            class="dropdown-item"
+            routerLink="/universities"
+            style="display: flex; justify-content: center"
+            >TOP UNIVERSITIES</a
+          >
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <!-- //Utilizing ml-auto to push elements to the right -->
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="enquiry"
+          style="
+            font-weight: bold;
+            background-color: #aa2222;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+          "
+          >ENQUIRY NOW</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
